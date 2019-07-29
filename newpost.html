@@ -80,7 +80,7 @@ function updatedPosts(a) {
                 pd = e[i].published.$t.substring(0, 10),
                 date = pd.replace(/-/g, "/");
             }
-            content += '<li class="update">';
+            content += '<li class="update"><img src="' + img.replace(/\/s72-c/, "/s40-c") + '" class="imgupdate" alt="thumb" height="40px" width="40px"/>';
             content += '<strong><a href="' + link + '" target="_blank">' + title + '</a></strong><span class="tgl-com"> diposkan pada ' + date + "</span></li>";
         }
         ct.innerHTML = content
