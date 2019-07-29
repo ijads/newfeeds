@@ -1,27 +1,29 @@
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8"/>
-<title>Artikel Diperbaharui</title>
+<title>New Articles</title>
 <meta content='width=device-width, initial-scale=1' name='viewport'/>
-<link href='https://fonts.googleapis.com/css?family=Roboto:300,400italic,400,500,500italic,700,700italic,900%7CMaterial+Icons' rel='stylesheet' type='text/css'/>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:300,300i,400,400i,600,600i,700,700i&display=swap' rel='stylesheet' type='text/css'/>
 <style>
 body {
   background-color:transparent;
   margin:0;
   padding:0;
-  overflow:hidden;font-family:'Roboto'
+  overflow:hidden;font-family:'Titillium Web', sans-serif;
 }
  iframe{border:0;}
 #updated-posts {
-    color: #808080; width: 280px;
-}li.update a {
-    color: #2196F3;
+    color: #808080; width: 100%;
+}li. {
+    color: #333;
     text-decoration: none;
-    font-weight: 300;font-family:'Roboto'; font-size: 13px;
+    font-weight: 300;font-family:'Titillium Web', sans-serif; font-size: 13px;
 }
-li.update {
+li. {
     height: 60px;
     overflow: hidden;
     list-style: none;
@@ -29,18 +31,13 @@ li.update {
     padding: 0;
     border-top: 1px solid #fdfdfd;
 }
-  .imgupdate { float:left; margin:5px 10px 0 5px } 
   .tgl-com { display:block;font-size: 11px;
     padding-top: 5px;}
   ol#updated-posts {
     margin: 0;
     padding: 0;
-}li.update a:hover {
+}li. a:hover {
     color: #00ab60;
-}.credit {
-    Float: right;
-    font-size: 70%;
-    text-decoration: none;
 }
   </style>
 	<script>
@@ -64,7 +61,7 @@ function getQueryVariable(variable) {
         //]]>
 </script>
   <script>
-// Pengembangan dari http://www.dte.web.id/2012/01/basic-json-feeds-for-blogger.html // Widget Daftar Posting Diperbaharui // Nodified : yOu w4hyOu // https://plus.google.com/106933633716411881896/about // http://info-kmu.blogspot.com/ 
+// from http://www.dte.web.id/2012/01/basic-json-feeds-for-blogger.html // 
 function updatedPosts(a) {
     if (document.getElementById("updated-posts")) {
         var e = a.feed.entry,
@@ -80,9 +77,7 @@ function updatedPosts(a) {
             var title = e[i].title.$t,
                 pd = e[i].published.$t.substring(0, 10),
                 date = pd.replace(/-/g, "/");
-            }
-            content += '<li class="update">';
-            content += '<strong><a href="' + link + '" target="_blank">' + title + '</a></strong><span class="tgl-com"> diposkan pada ' + date + "</span></li>";
+            content += '<li><a href="' + link + '" target="_blank">' + title + '</a></li><span class="tgl-com"> Date Post ' + date + "</span></li>";
         }
         ct.innerHTML = content
     }
@@ -93,6 +88,5 @@ document.getElementsByTagName('head')[0].appendChild(you_script);
 
 
  </script>
-	<div class="credit">By <a href="//info-kmu.blogspot.com">Info [K-moe]</a></div>
 </body>
 </html>
