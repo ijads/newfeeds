@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +26,6 @@ li.update {
     list-style: none;
     border-bottom: 1px solid #e6e6e6;
     padding: 0;
-    border-top: 1px solid #fdfdfd;
     text-decoration: none;
 }
   .tgl-com { display:block;font-size: 11px;
@@ -78,7 +74,7 @@ function updatedPosts(a) {
             var title = e[i].title.$t,
                 pd = e[i].published.$t.substring(0, 10),
                 date = pd.replace(/-/g, "/");
-            content += '<li class="update"><a href="' + link + '" target="_blank">' + title + '</a></li><span class="tgl-com"> Date Post ' + date + "</span></li>";
+            content += '<li class="update"><a href="' + link + '" target="_blank">' + title + '</a></li><li><span class="tgl-com"> Date Post ' + date + "</span></li>";
         }
         ct.innerHTML = content
     }
