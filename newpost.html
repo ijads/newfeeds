@@ -15,10 +15,12 @@ body {
  iframe{border:0;}
 #updated-posts {
     color: #808080; width: 100%;
-}li.update a {
+li.update a {
     color: #333;
     text-decoration: none;
-    font-weight: 600;font-family:'Titillium Web', sans-serif; font-size: 13px;
+    font-weight: 300;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 13px;
 }
 li.update {
     height: auto;
@@ -28,12 +30,17 @@ li.update {
     border-top: 1px solid #acacac;
     text-decoration: none;
 }
-  .tgl-com { display:block;font-size: 11px;
-    padding-top: 5px;}
+.tgl-com {
+    padding: 5px 0 0 0px;
+    display: block;
+    font-size: 10px;
+    text-align: right;
+}
   ol#updated-posts {
     margin: 0;
     padding: 0;
-}li.update a:hover {
+}
+li.update a:hover {
     color: #00ab60;
 }
   </style>
@@ -62,7 +69,7 @@ function getQueryVariable(variable) {
 function updatedPosts(a) {
     if (document.getElementById("updated-posts")) {
         var e = a.feed.entry,
-            title, link, date, content = "",
+            title, img, link, date, content = "",
             ct = document.getElementById("updated-posts");
         for (var i = 0; i < 7; i++) {
             for (var j = 0; j < 7; j++) {
