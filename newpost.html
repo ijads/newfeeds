@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,13 +14,13 @@ body {
 }
  iframe{border:0;}
 #updated-posts {
-    color: #808080; width: 100%;
-}li.strong {
-    color: #333;
+    color: #808080; width: 280px;
+}li.update a {
+    color: #2196F3;
     text-decoration: none;
     font-weight: 300;font-family:'Titillium Web', sans-serif; font-size: 13px;
 }
-li.strong {
+li.update {
     height: 60px;
     overflow: hidden;
     list-style: none;
@@ -30,13 +28,18 @@ li.strong {
     padding: 0;
     border-top: 1px solid #fdfdfd;
 }
+  .imgupdate { float:left; margin:5px 10px 0 5px } 
   .tgl-com { display:block;font-size: 11px;
     padding-top: 5px;}
   ol#updated-posts {
     margin: 0;
     padding: 0;
-}li.strong a:hover {
+}li.update a:hover {
     color: #00ab60;
+}.credit {
+    Float: right;
+    font-size: 70%;
+    text-decoration: none;
 }
   </style>
 	<script>
@@ -60,7 +63,7 @@ function getQueryVariable(variable) {
         //]]>
 </script>
   <script>
-// from http://www.dte.web.id/2012/01/basic-json-feeds-for-blogger.html // 
+// From http://www.dte.web.id/2012/01/basic-json-feeds-for-blogger.html //
 function updatedPosts(a) {
     if (document.getElementById("updated-posts")) {
         var e = a.feed.entry,
@@ -76,7 +79,13 @@ function updatedPosts(a) {
             var title = e[i].title.$t,
                 pd = e[i].published.$t.substring(0, 10),
                 date = pd.replace(/-/g, "/");
-            content += '<strong><a href="' + link + '" target="_blank">' + title + '</a></strong><span class="tgl-com"> Date Post ' + date + "</span></li>";
+            if ("media$thumbnail" in e[i]) {
+                img = e[i].media$thumbnail.url
+            } else {
+                img = "https://2.bp.blogspot.com/-UqZAzvrQxfo/WQa6cs7hA7I/AAAAAAAAMgk/LUJhBACQTd4pb2MLR7RmKJJShX4uFfKEwCLcB/s40/images%2B%25281%2529.jpg"
+            }
+            content += '<li class="update"><img src="' + img.replace(/\/s72-c/, "/s40-c") + '" class="imgupdate" alt="thumb" height="40px" width="40px"/>';
+            content += '<strong><a href="' + link + '" target="_blank">' + title + '</a></strong><span class="tgl-com"> diposkan pada ' + date + "</span></li>";
         }
         ct.innerHTML = content
     }
@@ -87,5 +96,6 @@ document.getElementsByTagName('head')[0].appendChild(you_script);
 
 
  </script>
+	<div class="credit">By <a href="//info-kmu.blogspot.com">Info [K-moe]</a></div>
 </body>
 </html>
