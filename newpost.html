@@ -18,25 +18,26 @@ body {
  iframe{border:0;}
 #updated-posts {
     color: #808080; width: 100%;
-}li. {
+}li.update a {
     color: #333;
     text-decoration: none;
     font-weight: 300;font-family:'Titillium Web', sans-serif; font-size: 13px;
 }
-li. {
+li.update {
     height: 60px;
     overflow: hidden;
     list-style: none;
     border-bottom: 1px solid #e6e6e6;
     padding: 0;
     border-top: 1px solid #fdfdfd;
+    text-decoration: none;
 }
   .tgl-com { display:block;font-size: 11px;
     padding-top: 5px;}
   ol#updated-posts {
     margin: 0;
     padding: 0;
-}li. a:hover {
+}li.update a:hover {
     color: #00ab60;
 }
   </style>
@@ -77,7 +78,7 @@ function updatedPosts(a) {
             var title = e[i].title.$t,
                 pd = e[i].published.$t.substring(0, 10),
                 date = pd.replace(/-/g, "/");
-            content += '<li><a href="' + link + '" target="_blank">' + title + '</a></li><span class="tgl-com"> Date Post ' + date + "</span></li>";
+            content += '<li class="update"><a href="' + link + '" target="_blank">' + title + '</a></li><span class="tgl-com"> Date Post ' + date + "</span></li>";
         }
         ct.innerHTML = content
     }
