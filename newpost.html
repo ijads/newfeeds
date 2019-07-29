@@ -17,12 +17,12 @@ body {
  iframe{border:0;}
 #updated-posts {
     color: #808080; width: 100%;
-}li.update a {
+}li.strong {
     color: #333;
     text-decoration: none;
     font-weight: 300;font-family:'Titillium Web', sans-serif; font-size: 13px;
 }
-li.update {
+li.strong {
     height: 60px;
     overflow: hidden;
     list-style: none;
@@ -30,13 +30,12 @@ li.update {
     padding: 0;
     border-top: 1px solid #fdfdfd;
 }
-  .imgupdate { float:left; margin:5px 10px 0 5px } 
   .tgl-com { display:block;font-size: 11px;
     padding-top: 5px;}
   ol#updated-posts {
     margin: 0;
     padding: 0;
-}li.update a:hover {
+}li.strong a:hover {
     color: #00ab60;
 }
   </style>
@@ -77,7 +76,7 @@ function updatedPosts(a) {
             var title = e[i].title.$t,
                 pd = e[i].published.$t.substring(0, 10),
                 date = pd.replace(/-/g, "/");
-            content += '<strong><a href="' + link + '" target="_blank">' + title + '</a></strong><span class="tgl-com"> diposkan pada ' + date + "</span></li>";
+            content += '<strong><a href="' + link + '" target="_blank">' + title + '</a></strong><span class="tgl-com"> Date Post ' + date + "</span></li>";
         }
         ct.innerHTML = content
     }
